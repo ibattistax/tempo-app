@@ -4,36 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tempo App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>London</h1>
-        <p>
-          Tuesday | 14:49 | scattered clouds
-          <br />
-          Humidity 66%, Wind 3.13 km/h
-        </p>
-      </div>
-      <div>🌤 12ºC</div>
-    </main>
-    <footer>
-      Coded by
-      <a href="https://github.com/ibattistax" target="_blank">Isabel Battista</a
-      >, is
-      <a href="https://github.com/ibattistax/tempo-app" target="_blank"
-        >open-sourced on GitHub</a
-      >
-      and
-      <a href="https://tempo-app-ib.netlify.app/" target="_blank"
-        >hosted on Netlify</a
-      >.
-    </footer>
+    <div class="weather-app">
+      <header>
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="form-search"
+          />
+          <input type="submit" value="Search" class="form-button" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city">London</h1>
+            <p class="weather-app-details">
+              Tuesday | 14:49 | scattered clouds
+              <br />
+              Humidity <strong>66%</strong>, Wind <strong>3.13 km/h</strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature">
+            <div class="weather-app-icon">🌤</div>
+            <div class="weather-app-temperature-value">12</div>
+            <div class="weather-app-units"><strong>ºC</strong> | ºF</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/ibattistax" target="_blank"
+          >Isabel Battista</a
+        >, is
+        <a href="https://github.com/ibattistax/tempo-app" target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a href="https://tempo-app-ib.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >.
+      </footer>
+    </div>
   </body>
 </html>

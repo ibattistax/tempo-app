@@ -1,10 +1,53 @@
-function refreshWeather(response) {
-  console.log(response.data.temperature.current);
-  let temperatureElement = document.querySelector("#temperature");
+function unitToggle() {
   let temperature = Math.round(response.data.temperature.current);
-  temperatureElement.innerHTML = temperature;
+}
+
+function refreshWeather(response) {
+  //select and define elements
+
+  let temperatureElement = document.querySelector("#temperature");
   let cityDisplayElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+
+  //define API variables
+  let temperature = Math.round(response.data.temperature.current);
+  let description = response.data.condition.description;
+  let humidity = Math.round(response.data.temperature.humidity);
+  let date = new Date(response.data.time * 1000);
+
+  //change innerHTML to display API response
+  temperatureElement.innerHTML = temperature;
   cityDisplayElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = description;
+  humidityElement.innerHTML = `${humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
+  timeElement.innerHTML = formatDate(date);
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  return `${day} | ${hours}:${minutes}`;
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  } else if ((minutes = 0)) {
+    minutes = `00${minutes}`;
+  }
 }
 
 function searchCity(city) {

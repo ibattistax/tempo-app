@@ -4,7 +4,6 @@ function unitToggle() {
 
 function refreshWeather(response) {
   //select and define elements
-
   let temperatureElement = document.querySelector("#temperature");
   let cityDisplayElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -41,13 +40,13 @@ function formatDate(date) {
   ];
   let day = days[date.getDay()];
 
-  return `${day} | ${hours}:${minutes}`;
-
   if (minutes < 10) {
     minutes = `0${minutes}`;
   } else if ((minutes = 0)) {
     minutes = `00${minutes}`;
   }
+
+  return `${day} | ${hours}:${minutes}`;
 }
 
 function searchCity(city) {

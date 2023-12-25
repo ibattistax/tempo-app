@@ -30,7 +30,7 @@ function refreshWeather(response) {
 }
 
 function formatDate(date) {
-  let minutes = date.getMinutes();
+  let minute = date.getMinutes();
   let hours = date.getHours();
   let days = [
     "Sunday",
@@ -43,13 +43,13 @@ function formatDate(date) {
   ];
   let day = days[date.getDay()];
 
-  if (minutes < 10) {
-    minutes = `0${minutes}`; // format minutes as :08 instead of :8
-  } else if ((minutes = 0)) {
-    minutes = `00`; // format minutes as 9:00 instead of 9:0
+  if (minute < 10) {
+    minute = `0${minute}`; // format minutes as :08 instead of :8
+  } else if (minute == 0) {
+    minute = `00`; // format minutes as 9:00 instead of 9:0
   }
 
-  return `${day} | ${hours}:${minutes}`;
+  return `${day} | ${hours}:${minute}`;
 }
 
 function searchCity(city) {
